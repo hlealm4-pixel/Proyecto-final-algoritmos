@@ -1,23 +1,31 @@
 INICIO
 
+	// Inicializamos Variables
 	continuar <- "si"
 	total <- 0
 	cant_notas <- 0
 	nota <- 0
+
+	// Creamos un bucle que el usuario pueda cortar para que ingrese n cantidad de notas
 	MIENTRAS continuar = "si" HACER
 		IMPRIMIR "Ingrese la nota"
 		LEER nota
+
+		// si la nota esta en el rango adecuado [0..100] entonces tomara en cuenta la nota sino solo imprimira una adveretencia al usuario
 		SI nota < 0 o nota > 100 ENTONCES
 			IMPRIMIR "Nota incorrecta, la nota debe ser mayor o igual a 0 y menor o igual a 100"
 		SINO
 			total <- total + nota
 			cant_notas <- cant_notas + 1
 		FINSI
+		// Verifica que el usuario pueda ingresar unicamente si o no
 		MIENTRAS continuar != "si" y continuar != "no" HACER
 			IMPRIMIR "¿Desea continuar? (si/no)"
 			LEER continuar
 		FINMIENTRAS
 	FINMIENTRAS
+
+	// Muestra los datos ingresados y procesados
 	IMPRIMIR "Se ingresarion ", cant_notas, " nota(s)"
 	IMPRIMIR "El promedio de las notas ingresadas es de: ", total / cant_notas
 
