@@ -1,0 +1,24 @@
+INICIO
+
+	continuar <- "si"
+	total <- 0
+	cant_notas <- 0
+	nota <- 0
+	MIENTRAS continuar = "si" HACER
+		IMPRIMIR "Ingrese la nota"
+		LEER nota
+		SI nota < 0 o nota > 100 ENTONCES
+			IMPRIMIR "Nota incorrecta, la nota debe ser mayor o igual a 0 y menor o igual a 100"
+		SINO
+			total <- total + nota
+			cant_notas <- cant_notas + 1
+		FINSI
+		MIENTRAS continuar != "si" y continuar != "no" HACER
+			IMPRIMIR "¿Desea continuar? (si/no)"
+			LEER continuar
+		FINMIENTRAS
+	FINMIENTRAS
+	IMPRIMIR "Se ingresarion ", cant_notas, " nota(s)"
+	IMPRIMIR "El promedio de las notas ingresadas es de: ", total / cant_notas
+
+FIN
